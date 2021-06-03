@@ -36,7 +36,7 @@ function setup() {
 
 	treeObj=new tree(1050,580);
 	groundObject=new ground(width/2,600,width,20);
-	launcherObject=new launcher(stoneObj.body,{x:235,y:420})
+	launcherObject=new launcher(stoneObj.body,{x:835,y:220})
   // var render = Render.create({
   //   element: document.body,
   //   engine: engine,
@@ -112,12 +112,13 @@ function keyPressed() {
   }
 
   function detectollision(lstone,lmango){
-	/*var collision = Matter.SAT.collides(lstone,lmango);
+	/* var collision = Matter.SAT.collides(lstone,lmango);
 	if(collision.collided){
 		console.log("collided");
 		Matter.Body.setStatic(lmango,false);	
-	}*/
-  mangoBodyPosition=lmango.body.position
+	 } */
+  
+   mangoBodyPosition=lmango.body.position
   stoneBodyPosition=lstone.body.position
   
   var distance=dist(stoneBodyPosition.x, stoneBodyPosition.y, mangoBodyPosition.x, mangoBodyPosition.y)
@@ -128,5 +129,5 @@ function keyPressed() {
       //console.log(distance);
   	  Matter.Body.setStatic(lmango.body,false);
     }
-
+ 
   }
